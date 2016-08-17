@@ -1,0 +1,29 @@
+<html>
+  <head>
+  	 <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+  		<div class="chilly">
+		    chilly
+		    <button class="clickMe">ok</button>
+	    </div>
+	    <div class="getDataFromInput">inputData</div>
+
+
+    <script type="text/javascript">
+
+		$(document).ready(function(){
+			$(".clickMe").click(function(){
+					$.ajax({
+						url:"/home/lixufei",
+						type: "post", 
+						data: {name: $('input[name="myName"]').val()},
+						success:function(data){
+							$(".getDataFromInput").text(data);
+							}});
+				})
+		});
+	</script>
+</body>
+</html>
